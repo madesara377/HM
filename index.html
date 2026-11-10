@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Management System | Quality Healthcare Platform</title>
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       TOP EMERGENCY & CONTACT INFO BAR
+       ========================================================================= -->
+  <aside class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-info">
+        <span class="top-info-item"><i class="fas fa-map-marker-alt"></i> 108 Healthcare Blvd, Medical Enclave</span>
+        <span class="top-info-item"><i class="far fa-clock"></i> OPD: Mon - Sat: 8:00 AM - 8:00 PM</span>
+        <span class="top-info-item"><i class="fas fa-envelope"></i> info@hospitalms.com</span>
+      </div>
+      <div class="top-info">
+        <span class="top-info-item top-emergency"><i class="fas fa-phone-volume"></i> 24/7 Emergency: 102 / +91 98765 00102</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       MAIN NAVIGATION HEADER
+       ========================================================================= -->
+  <header class="main-header">
+    <div class="container navbar">
+      <!-- Hospital Brand Logo -->
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <i class="fas fa-hospital"></i>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">Hospital Management</span>
+          <span class="logo-sub">Healthcare &amp; EMR Portal</span>
+        </div>
+      </a>
+
+      <!-- Pure CSS Mobile Hamburger Toggle Checkbox -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle Navigation">
+        <i class="fas fa-bars"></i>
+      </label>
+
+      <!-- Navigation Links -->
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="doctors.html" class="nav-link">Doctors</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="appointment.html" class="nav-link">Appointments</a>
+        <a href="patient-registration.html" class="nav-link">Patients</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="login.html" class="nav-link">Login</a>
+        <!-- Mobile View CTA Button -->
+        <a href="appointment.html" class="btn btn-primary btn-sm mobile-cta" style="display: none;">
+          <i class="fas fa-calendar-plus"></i> Book Appointment
+        </a>
+      </nav>
+
+      <!-- Desktop Book Appointment Button -->
+      <a href="appointment.html" class="btn btn-primary">
+        <i class="fas fa-calendar-check"></i> Book Appointment
+      </a>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN CONTENT CONTAINER
+       ========================================================================= -->
+  <main>
+    <!-- -----------------------------------------------------------------------
+         HERO SECTION
+         ----------------------------------------------------------------------- -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="hero-badge">
+            <i class="fas fa-heartbeat"></i> 24/7 Advanced Medical Care
+          </span>
+          <h1 class="hero-title">
+            Quality Healthcare, <span>Anytime, Anywhere</span>
+          </h1>
+          <p class="hero-desc">
+            Manage patients, doctors, appointments, medical records, and hospital services through one simple platform. Experience modern healthcare management built for efficiency, trust, and patient well-being.
+          </p>
+          <div class="hero-buttons">
+            <a href="appointment.html" class="btn btn-primary">
+              <i class="fas fa-calendar-check"></i> Book Appointment
+            </a>
+            <a href="doctors.html" class="btn btn-secondary">
+              <i class="fas fa-user-md"></i> View Doctors
+            </a>
+          </div>
+          <!-- Trust Badges -->
+          <div class="hero-highlights">
+            <div class="highlight-item">
+              <i class="fas fa-check-circle"></i> Certified Specialists
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-check-circle"></i> Instant Online Booking
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-check-circle"></i> 100% Digital EHR Records
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Hospital Visual -->
+        <div class="hero-image-wrapper">
+          <div class="hero-image-card">
+            <img src="images/hospital.jpg" alt="City General Hospital Modern Facility">
+          </div>
+          <div class="hero-floating-card">
+            <div class="floating-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="floating-text">
+              <h4>Top Rated Healthcare</h4>
+              <p>Over 10,000+ satisfied patients</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         STATISTICS SECTION
+         ----------------------------------------------------------------------- -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <!-- Stat 1 -->
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="stat-number">5000+</div>
+            <div class="stat-label">Patients Treated</div>
+          </div>
+
+          <!-- Stat 2 -->
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-user-doctor"></i>
+            </div>
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Specialist Doctors</div>
+          </div>
+
+          <!-- Stat 3 -->
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-hospital-user"></i>
+            </div>
+            <div class="stat-number">20+</div>
+            <div class="stat-label">Medical Departments</div>
+          </div>
+
+          <!-- Stat 4 -->
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-award"></i>
+            </div>
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Years of Experience</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         SERVICES SECTION (6 CARDS)
+         ----------------------------------------------------------------------- -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Hospital Modules &amp; Care</span>
+          <h2 class="section-title">Comprehensive Hospital Services</h2>
+          <p class="section-subtitle">
+            Everything you need to manage patient lifecycle, clinical workflows, and everyday healthcare operations seamlessly.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service 1 -->
+          <article class="service-card">
+            <div class="service-icon-wrapper">
+              <i class="fas fa-user-plus"></i>
+            </div>
+            <h3>Patient Registration</h3>
+            <p>Seamless digital intake for new and returning patients. Generates unified Patient IDs, tracks emergency contacts, and records demographic info.</p>
+            <a href="patient-registration.html" class="service-link">
+              Register Patient <i class="fas fa-arrow-right"></i>
+            </a>
+          </article>
+
+          <!-- Service 2 -->
+          <article class="service-card">
+            <div class="service-icon-wrapper">
+              <i class="fas fa-calendar-check"></i>
+            </div>
+            <h3>Appointment Scheduling</h3>
+            <p>Book, reschedule, and organize doctor appointments effortlessly with live department slots and instant booking confirmations.</p>
+            <a href="appointment.html" class="service-link">
+              Schedule Now <i class="fas fa-arrow-right"></i>
+            </a>
+          </article>
+
+          <!-- Service 3 -->
+          <article class="service-card">
+            <div class="service-icon-wrapper">
+              <i class="fas fa-user-doctor"></i>
+            </div>
+            <h3>Doctor Management</h3>
+            <p>Complete directory of physicians, consulting timings, specialties, operational duty hours, and real-time patient appointment queues.</p>
+            <a href="doctors.html" class="service-link">
+              View Directory <i class="fas fa-arrow-right"></i>
+            </a>
+          </article>
+
+          <!-- Service 4 -->
+          <article class="service-card">
+            <div class="service-icon-wrapper">
+              <i class="fas fa-file-medical"></i>
+            </div>
+            <h3>Medical Records</h3>
+            <p>Electronic Health Records (EHR) archiving clinical diagnoses, doctor prescriptions, lab test reports, and past medical procedures safely.</p>
+            <a href="medical-records.html" class="service-link">
+              Browse Records <i class="fas fa-arrow-right"></i>
+            </a>
+          </article>
+
+          <!-- Service 5 -->
+          <article class="service-card">
+            <div class="service-icon-wrapper">
+              <i class="fas fa-file-invoice-dollar"></i>
+            </div>
+            <h3>Billing Management</h3>
+            <p>Transparent hospitalization invoices, consultation fees, medicine receipts, online billing breakdowns, and status tracking.</p>
+            <a href="billing.html" class="service-link">
+              View Invoices <i class="fas fa-arrow-right"></i>
+            </a>
+          </article>
+
+          <!-- Service 6 -->
+          <article class="service-card">
+            <div class="service-icon-wrapper">
+              <i class="fas fa-pills"></i>
+            </div>
+            <h3>Pharmacy Management</h3>
+            <p>Integrated prescription dispensing, in-stock medication catalog, dose tracking, and direct synchronisation with patient charts.</p>
+            <a href="services.html" class="service-link">
+              Learn Details <i class="fas fa-arrow-right"></i>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         WHY CHOOSE US SECTION (4 FEATURE CARDS)
+         ----------------------------------------------------------------------- -->
+    <section class="section-padding why-choose-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Patient First</span>
+          <h2 class="section-title">Why Choose Our Hospital System?</h2>
+          <p class="section-subtitle">
+            Built with modern healthcare standards, patient safety, and seamless hospital management at the core.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Feature 1 -->
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-stethoscope"></i>
+            </div>
+            <h3>Experienced Doctors</h3>
+            <p>Board-certified specialists and compassionate medical staff across more than 20 clinical departments.</p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <h3>Easy Appointment Booking</h3>
+            <p>Quick and simple 2-step appointment booking system for hassle-free consultations without long waiting queues.</p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-shield-halved"></i>
+            </div>
+            <h3>Secure Patient Records</h3>
+            <p>Strict confidentiality and secure digital electronic medical records accessible anytime from the patient dashboard.</p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3>24/7 Healthcare Support</h3>
+            <p>Round-the-clock emergency trauma care, active pharmacy, and dedicated patient helpline always on standby.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: About Hospital -->
+        <div class="footer-col footer-about">
+          <h3>Hospital Management</h3>
+          <p>
+            Providing high-quality medical services, computerized hospital management, and accessible patient care. Committed to clinical excellence and compassionate healthcare.
+          </p>
+          <div class="highlight-item" style="color: #94a3b8;">
+            <i class="fas fa-shield-alt" style="color: var(--secondary);"></i> ISO 9001:2026 Certified Facility
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Hospital</a></li>
+            <li><a href="doctors.html"><i class="fas fa-chevron-right"></i> Our Doctors</a></li>
+            <li><a href="appointment.html"><i class="fas fa-chevron-right"></i> Book Appointment</a></li>
+            <li><a href="login.html"><i class="fas fa-chevron-right"></i> Staff &amp; Patient Login</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div class="footer-col">
+          <h3>Healthcare Services</h3>
+          <ul class="footer-links">
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Emergency Care</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Cardiology Department</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Neurology Clinic</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Dental Health</a></li>
+            <li><a href="billing.html"><i class="fas fa-chevron-right"></i> Billing &amp; Invoices</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact Information -->
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>108 Healthcare Blvd, Medical Enclave, City, PIN-400001</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <span>+91 98765 43210 / 1800-123-4567</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>support@hospitalms.com</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-truck-medical"></i>
+              <span>Emergency Hotline: Dial 102</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright & Bottom Bar -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 <span>Hospital Management System</span>. All rights reserved. Designed for College Project Demonstration.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

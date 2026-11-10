@@ -1,0 +1,155 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="HM.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server">Hospital Management System</asp:ContentPlaceHolder></title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+   
+    <link rel="stylesheet" href="css/style.css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+
+        <aside class="top-bar">
+            <div class="container top-bar-content">
+                <div class="top-info">
+                    <span class="top-info-item"><i class="fas fa-map-marker-alt"></i> 108 Healthcare Blvd, Medical Enclave</span>
+                    <span class="top-info-item"><i class="far fa-clock"></i> OPD: Mon - Sat: 8:00 AM - 8:00 PM</span>
+                    <span class="top-info-item"><i class="fas fa-envelope"></i> info@hospitalms.com</span>
+                </div>
+                <div class="top-info">
+                    <span class="top-info-item top-emergency"><i class="fas fa-phone-volume"></i> 24/7 Emergency: 102 / +91 98765 00102</span>
+                </div>
+            </div>
+        </aside>
+
+
+
+        <header class="main-header">
+            <div class="container navbar">
+                <!-- Hospital Brand Logo -->
+                <a href="index.aspx" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-title">Hospital Management</span>
+                        <span class="logo-sub">Healthcare &amp; EMR Portal</span>
+                    </div>
+                </a>
+
+                <!-- Pure CSS Mobile Hamburger Toggle Checkbox -->
+                <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+                <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle Navigation">
+                    <i class="fas fa-bars"></i>
+                </label>
+
+                <!-- Navigation Links -->
+                <nav class="nav-menu">
+                    <a href="index.aspx" class='nav-link <%= GetActiveClass("index.aspx") %>'>Home</a>
+                    <a href="about.aspx" class='nav-link <%= GetActiveClass("about.aspx") %>'>About</a>
+                    <a href="doctors.aspx" class='nav-link <%= GetActiveClass("doctors.aspx") %>'>Doctors</a>
+                    <a href="services.aspx" class='nav-link <%= GetActiveClass("services.aspx") %>'>Services</a>
+                    <a href="appointment.aspx" class='nav-link <%= GetActiveClass("appointment.aspx") %>'>Appointments</a>
+                    <a href="patient-registration.aspx" class='nav-link <%= GetActiveClass("patient-registration.aspx") %>'>Patients</a>
+                    <a href="contact.aspx" class='nav-link <%= GetActiveClass("contact.aspx") %>'>Contact</a>
+                    <a href="login.aspx" class='nav-link <%= GetActiveClass("login.aspx") %>'>Login</a>
+                    <!-- Mobile View CTA Button -->
+                    <a href="appointment.aspx" class="btn btn-primary btn-sm mobile-cta" style="display: none;">
+                        <i class="fas fa-calendar-plus"></i> Book Appointment
+                    </a>
+                </nav>
+
+                <!-- Desktop Book Appointment Button -->
+                <a href="appointment.aspx" class="btn btn-primary">
+                    <i class="fas fa-calendar-check"></i> Book Appointment
+                </a>
+            </div>
+        </header>
+
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+
+
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-grid">
+               
+                    <div class="footer-col footer-about">
+                        <h3>Hospital Management</h3>
+                        <p>
+                            Providing high-quality medical services, computerized hospital management, and accessible patient care. Committed to clinical excellence and compassionate healthcare.
+                        </p>
+                        <div class="highlight-item" style="color: #94a3b8;">
+                            <i class="fas fa-shield-alt" style="color: var(--secondary);"></i> ISO 9001:2026 Certified Facility
+                        </div>
+                    </div>
+
+                  
+                    <div class="footer-col">
+                        <h3>Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="index.aspx"><i class="fas fa-chevron-right"></i> Home</a></li>
+                            <li><a href="about.aspx"><i class="fas fa-chevron-right"></i> About Hospital</a></li>
+                            <li><a href="doctors.aspx"><i class="fas fa-chevron-right"></i> Our Doctors</a></li>
+                            <li><a href="appointment.aspx"><i class="fas fa-chevron-right"></i> Book Appointment</a></li>
+                            <li><a href="login.aspx"><i class="fas fa-chevron-right"></i> Staff &amp; Patient Login</a></li>
+                        </ul>
+                    </div>
+
+               
+                    <div class="footer-col">
+                        <h3>Healthcare Services</h3>
+                        <ul class="footer-links">
+                            <li><a href="services.aspx"><i class="fas fa-chevron-right"></i> Emergency Care</a></li>
+                            <li><a href="services.aspx"><i class="fas fa-chevron-right"></i> Cardiology Department</a></li>
+                            <li><a href="services.aspx"><i class="fas fa-chevron-right"></i> Neurology Clinic</a></li>
+                            <li><a href="services.aspx"><i class="fas fa-chevron-right"></i> Dental Health</a></li>
+                            <li><a href="billing.aspx"><i class="fas fa-chevron-right"></i> Billing &amp; Invoices</a></li>
+                        </ul>
+                    </div>
+
+                
+                    <div class="footer-col">
+                        <h3>Contact Us</h3>
+                        <div class="footer-contact-list">
+                            <div class="footer-contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>108 Healthcare Blvd, Medical Enclave, City, PIN-400001</span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <i class="fas fa-phone-alt"></i>
+                                <span>+91 98765 43210 / 1800-123-4567</span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>support@hospitalms.com</span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <i class="fas fa-truck-medical"></i>
+                                <span>Emergency Hotline: Dial 102</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            
+                <div class="footer-bottom">
+                    <p>&copy; 2026 <span>Hospital Management System</span>. All rights reserved. Designed for College Project Demonstration.</p>
+                </div>
+            </div>
+        </footer>
+
+        <asp:ContentPlaceHolder ID="ScriptsContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

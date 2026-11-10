@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Dashboard | Hospital Management System</title>
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       MAIN NAVIGATION HEADER (PORTAL VIEW)
+       ========================================================================= -->
+  <header class="main-header">
+    <div class="container navbar">
+      <!-- Hospital Brand Logo -->
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <i class="fas fa-hospital"></i>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">Hospital Management</span>
+          <span class="logo-sub">Doctor &amp; Staff Workspace</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="doctors.html" class="nav-link">Doctors Directory</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="medical-records.html" class="nav-link">EHR Database</a>
+        <a href="billing.html" class="nav-link">Billing</a>
+        <a href="login.html" class="btn btn-outline btn-sm" style="margin-left: 10px;">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       DOCTOR DASHBOARD WORKSPACE (SIDEBAR + MAIN)
+       ========================================================================= -->
+  <div class="dashboard-layout">
+    
+    <!-- -----------------------------------------------------------------------
+         DOCTOR SIDEBAR
+         ----------------------------------------------------------------------- -->
+    <aside class="dashboard-sidebar">
+      <!-- Doctor Profile Preview -->
+      <div class="sidebar-user-card">
+        <div class="sidebar-avatar" style="background: linear-gradient(135deg, #0d47a1, #1a73e8);">
+          DR
+        </div>
+        <div class="sidebar-user-details">
+          <h4>Dr. Rahul Sharma</h4>
+          <p>Cardiology Specialist</p>
+        </div>
+      </div>
+
+      <!-- Menu Items -->
+      <ul class="sidebar-menu">
+        <li class="sidebar-item active">
+          <a href="doctor-dashboard.html">
+            <i class="fas fa-chart-line"></i> Dashboard
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="#profile">
+            <i class="fas fa-user-md"></i> My Profile
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="#appointments">
+            <i class="fas fa-calendar-check"></i> Appointments
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="#patients">
+            <i class="fas fa-hospital-user"></i> Patients
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="medical-records.html">
+            <i class="fas fa-file-medical"></i> Medical Records
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="#prescriptions">
+            <i class="fas fa-prescription"></i> Prescriptions
+          </a>
+        </li>
+        <li class="sidebar-item logout">
+          <a href="login.html">
+            <i class="fas fa-arrow-right-from-bracket"></i> Logout
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- -----------------------------------------------------------------------
+         DOCTOR MAIN WORKSPACE
+         ----------------------------------------------------------------------- -->
+    <main class="dashboard-main">
+      
+      <!-- Greeting Header -->
+      <div class="dashboard-header">
+        <div class="dashboard-greeting">
+          <h1>Clinical Dashboard — Dr. Rahul Sharma</h1>
+          <p>Department of Cardiology | Room 204 | Status: <span class="badge badge-success"><i class="fas fa-circle"></i> On Duty</span></p>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <a href="medical-records.html" class="btn btn-secondary">
+            <i class="fas fa-file-medical"></i> New Clinical Note
+          </a>
+          <a href="appointment.html" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Add Walk-In Slot
+          </a>
+        </div>
+      </div>
+
+      <!-- 4 Metric Cards -->
+      <div class="dashboard-stats-grid">
+        <!-- Card 1: Today's Appointments -->
+        <div class="dashboard-stat-card">
+          <div class="d-stat-info">
+            <h3>06</h3>
+            <p>Today's Appointments</p>
+          </div>
+          <div class="d-stat-icon icon-blue">
+            <i class="fas fa-calendar-check"></i>
+          </div>
+        </div>
+
+        <!-- Card 2: Total Patients -->
+        <div class="dashboard-stat-card">
+          <div class="d-stat-info">
+            <h3>142</h3>
+            <p>Total Patients Assigned</p>
+          </div>
+          <div class="d-stat-icon icon-purple">
+            <i class="fas fa-users"></i>
+          </div>
+        </div>
+
+        <!-- Card 3: Pending Appointments -->
+        <div class="dashboard-stat-card">
+          <div class="d-stat-info">
+            <h3>02</h3>
+            <p>Pending Appointments</p>
+          </div>
+          <div class="d-stat-icon icon-orange">
+            <i class="fas fa-clock"></i>
+          </div>
+        </div>
+
+        <!-- Card 4: Completed Appointments -->
+        <div class="dashboard-stat-card">
+          <div class="d-stat-info">
+            <h3>18</h3>
+            <p>Completed This Week</p>
+          </div>
+          <div class="d-stat-icon icon-green">
+            <i class="fas fa-circle-check"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Clinical Schedule & Patient Appointments Table -->
+      <section class="table-card" id="appointments">
+        <div class="table-header-bar">
+          <h2>Today's Patient Schedule (20/09/2026)</h2>
+          <span class="badge badge-info"><i class="fas fa-stethoscope"></i> OPD Session Active</span>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Patient Name</th>
+                <th>Appointment Date</th>
+                <th>Time</th>
+                <th>Reason</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Row 1: Rahul Patel -->
+              <tr>
+                <td>
+                  <strong>Rahul Patel</strong>
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">ID: PT-2026-0842 | Male, 34 Yrs</div>
+                </td>
+                <td>20/09/2026</td>
+                <td>09:30 AM</td>
+                <td>Hypertension Follow-up &amp; ECG Review</td>
+                <td><span class="badge badge-completed"><i class="fas fa-check"></i> Completed</span></td>
+                <td>
+                  <a href="medical-records.html" class="btn btn-secondary btn-sm">View EMR</a>
+                </td>
+              </tr>
+
+              <!-- Row 2: Priya Shah -->
+              <tr>
+                <td>
+                  <strong>Priya Shah</strong>
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">ID: PT-2026-0891 | Female, 29 Yrs</div>
+                </td>
+                <td>20/09/2026</td>
+                <td>10:15 AM</td>
+                <td>Chest Tightness &amp; Palpitations</td>
+                <td><span class="badge badge-waiting"><i class="fas fa-hourglass-half"></i> In Queue</span></td>
+                <td>
+                  <a href="#" class="btn btn-primary btn-sm">Start Consult</a>
+                </td>
+              </tr>
+
+              <!-- Row 3: Amit Verma -->
+              <tr>
+                <td>
+                  <strong>Amit Verma</strong>
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">ID: PT-2026-0914 | Male, 48 Yrs</div>
+                </td>
+                <td>20/09/2026</td>
+                <td>11:00 AM</td>
+                <td>Post-Angioplasty Routine Evaluation</td>
+                <td><span class="badge badge-confirmed"><i class="fas fa-calendar-check"></i> Confirmed</span></td>
+                <td>
+                  <a href="#" class="btn btn-outline btn-sm">Call Patient</a>
+                </td>
+              </tr>
+
+              <!-- Row 4: Sunita Roy -->
+              <tr>
+                <td>
+                  <strong>Sunita Roy</strong>
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">ID: PT-2026-0955 | Female, 56 Yrs</div>
+                </td>
+                <td>20/09/2026</td>
+                <td>11:45 AM</td>
+                <td>High Blood Sugar &amp; Cardiac Clearance</td>
+                <td><span class="badge badge-confirmed"><i class="fas fa-calendar-check"></i> Confirmed</span></td>
+                <td>
+                  <a href="#" class="btn btn-outline btn-sm">Call Patient</a>
+                </td>
+              </tr>
+
+              <!-- Row 5: Rajesh Kumar -->
+              <tr>
+                <td>
+                  <strong>Rajesh Kumar</strong>
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">ID: PT-2026-0980 | Male, 62 Yrs</div>
+                </td>
+                <td>20/09/2026</td>
+                <td>01:30 PM</td>
+                <td>Shortness of breath on exertion</td>
+                <td><span class="badge badge-waiting"><i class="fas fa-clock"></i> Pending</span></td>
+                <td>
+                  <a href="#" class="btn btn-outline btn-sm">Pre-Check</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Quick Doctor Tools -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <!-- Quick Prescription Pad -->
+        <div class="table-card" style="padding: 24px; margin-bottom: 0;">
+          <h3 style="margin-bottom: 12px; font-size: 1.15rem; color: var(--text-dark);">
+            <i class="fas fa-pen-to-square" style="color: var(--primary);"></i> Quick Prescription Generator
+          </h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px;">
+            Rapidly issue standard medicine doses to the pharmacy for active consultation patients.
+          </p>
+          <div style="display: flex; gap: 10px;">
+            <input type="text" class="form-control" placeholder="Search drug (e.g. Atenolol, Atorvastatin)..." style="flex: 1;">
+            <button class="btn btn-secondary btn-sm">Add Drug</button>
+          </div>
+        </div>
+
+        <!-- Emergency Notification / Call Nurse -->
+        <div class="table-card" style="padding: 24px; margin-bottom: 0;">
+          <h3 style="margin-bottom: 12px; font-size: 1.15rem; color: var(--text-dark);">
+            <i class="fas fa-bell" style="color: var(--status-warning);"></i> Nursing Station Call
+          </h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px;">
+            Signal Duty Nurse for Cardiology Room 204 or summon ECG technician.
+          </p>
+          <div style="display: flex; gap: 10px;">
+            <button class="btn btn-secondary btn-sm"><i class="fas fa-user-nurse"></i> Summon Nurse</button>
+            <button class="btn btn-outline btn-sm"><i class="fas fa-heart-pulse"></i> Order Stat ECG</button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="main-footer" style="padding-top: 30px;">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding: 15px 0;">
+        <p>&copy; 2026 <span>Hospital Management System</span> — Doctor Portal. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

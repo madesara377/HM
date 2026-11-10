@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Login | Hospital Management System</title>
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Pure CSS Tab Switching via Radio Inputs */
+    .role-radio-toggle {
+      display: none;
+    }
+    .role-labels-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      background-color: var(--bg-body);
+      padding: 6px;
+      border-radius: var(--radius-md);
+      margin-bottom: 25px;
+      border: 1px solid var(--border-color);
+    }
+    .role-tab-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+    }
+    #role-patient:checked ~ .role-labels-container label[for="role-patient"],
+    #role-doctor:checked ~ .role-labels-container label[for="role-doctor"] {
+      background-color: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 4px 10px rgba(26, 115, 232, 0.25);
+    }
+    .patient-form, .doctor-form {
+      display: none;
+    }
+    #role-patient:checked ~ .patient-form {
+      display: block;
+    }
+    #role-doctor:checked ~ .doctor-form {
+      display: block;
+    }
+  </style>
+</head>
+<body style="background: linear-gradient(135deg, #f0f7ff 0%, #e2e8f0 100%);">
+
+  <!-- =========================================================================
+       MAIN NAVIGATION HEADER
+       ========================================================================= -->
+  <header class="main-header">
+    <div class="container navbar">
+      <!-- Hospital Brand Logo -->
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <i class="fas fa-hospital"></i>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">Hospital Management</span>
+          <span class="logo-sub">Healthcare &amp; EMR Portal</span>
+        </div>
+      </a>
+
+      <!-- Pure CSS Mobile Hamburger Toggle Checkbox -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle Navigation">
+        <i class="fas fa-bars"></i>
+      </label>
+
+      <!-- Navigation Links -->
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="doctors.html" class="nav-link">Doctors</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="appointment.html" class="nav-link">Appointments</a>
+        <a href="patient-registration.html" class="nav-link">Patients</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="login.html" class="nav-link active">Login</a>
+        <!-- Mobile View CTA Button -->
+        <a href="appointment.html" class="btn btn-primary btn-sm mobile-cta" style="display: none;">
+          <i class="fas fa-calendar-plus"></i> Book Appointment
+        </a>
+      </nav>
+
+      <!-- Desktop Book Appointment Button -->
+      <a href="appointment.html" class="btn btn-primary">
+        <i class="fas fa-calendar-check"></i> Book Appointment
+      </a>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       LOGIN CONTAINER SECTION
+       ========================================================================= -->
+  <main class="login-section">
+    <div class="container" style="display: flex; justify-content: center;">
+      <div class="login-card">
+        
+        <!-- Login Card Header -->
+        <div class="login-header">
+          <div class="logo-icon">
+            <i class="fas fa-user-shield"></i>
+          </div>
+          <h1>Hospital Portal Login</h1>
+          <p>Select your portal role to access records &amp; management tools</p>
+        </div>
+
+        <!-- Hidden Radio Inputs for Pure CSS Role Toggling -->
+        <input type="radio" name="login_role" id="role-patient" class="role-radio-toggle" checked>
+        <input type="radio" name="login_role" id="role-doctor" class="role-radio-toggle">
+
+        <!-- Role Selector Labels -->
+        <div class="role-labels-container">
+          <label for="role-patient" class="role-tab-label">
+            <i class="fas fa-user"></i> Patient Login
+          </label>
+          <label for="role-doctor" class="role-tab-label">
+            <i class="fas fa-user-doctor"></i> Doctor Login
+          </label>
+        </div>
+
+        <!-- -------------------------------------------------------------------
+             PATIENT LOGIN FORM (Directs to Patient Dashboard)
+             ------------------------------------------------------------------- -->
+        <form action="patient-dashboard.html" method="get" class="patient-form">
+          <div class="form-group">
+            <label class="form-label" for="patient-email-input">
+              <i class="fas fa-envelope" style="color: var(--primary);"></i> Patient Email or UHID <span class="required">*</span>
+            </label>
+            <input type="text" id="patient-email-input" name="patient_id" class="form-control" value="patient@hospitalms.com" placeholder="e.g. PT-2026-0842 or email" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="patient-pass-input">
+              <i class="fas fa-lock" style="color: var(--primary);"></i> Password <span class="required">*</span>
+            </label>
+            <input type="password" id="patient-pass-input" name="password" class="form-control" value="patient123" placeholder="Enter password..." required>
+          </div>
+
+          <!-- Options -->
+          <div class="login-options">
+            <label class="checkbox-label">
+              <input type="checkbox" name="remember" checked> Remember Me
+            </label>
+            <a href="#" style="font-size: 0.85rem;">Forgot Password?</a>
+          </div>
+
+          <!-- Action Buttons -->
+          <button type="submit" class="btn btn-primary btn-block" style="margin-bottom: 12px;">
+            <i class="fas fa-right-to-bracket"></i> Login as Patient
+          </button>
+          
+          <a href="patient-registration.html" class="btn btn-secondary btn-block">
+            <i class="fas fa-user-plus"></i> Create Account (New Patient)
+          </a>
+        </form>
+
+        <!-- -------------------------------------------------------------------
+             DOCTOR LOGIN FORM (Directs to Doctor Dashboard)
+             ------------------------------------------------------------------- -->
+        <form action="doctor-dashboard.html" method="get" class="doctor-form">
+          <div class="form-group">
+            <label class="form-label" for="doctor-email-input">
+              <i class="fas fa-user-md" style="color: var(--primary);"></i> Doctor Staff ID or Email <span class="required">*</span>
+            </label>
+            <input type="text" id="doctor-email-input" name="doctor_id" class="form-control" value="doctor@hospitalms.com" placeholder="e.g. DOC-CARD-04 or email" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="doctor-pass-input">
+              <i class="fas fa-key" style="color: var(--primary);"></i> Staff Password <span class="required">*</span>
+            </label>
+            <input type="password" id="doctor-pass-input" name="password" class="form-control" value="doctor123" placeholder="Enter doctor portal password..." required>
+          </div>
+
+          <!-- Options -->
+          <div class="login-options">
+            <label class="checkbox-label">
+              <input type="checkbox" name="remember" checked> Remember Me
+            </label>
+            <a href="#" style="font-size: 0.85rem;">Reset Credentials?</a>
+          </div>
+
+          <!-- Action Buttons -->
+          <button type="submit" class="btn btn-primary btn-block" style="margin-bottom: 12px; background-color: #0d47a1;">
+            <i class="fas fa-stethoscope"></i> Login as Doctor
+          </button>
+
+          <a href="doctors.html" class="btn btn-secondary btn-block">
+            <i class="fas fa-id-badge"></i> View Doctors Directory
+          </a>
+        </form>
+
+        <!-- Demo Presentation Credentials Box -->
+        <div class="login-demo-box">
+          <p><strong><i class="fas fa-flask"></i> College Demo Credentials:</strong></p>
+          <div style="margin-top: 4px; line-height: 1.5;">
+            <div>&bull; <strong>Patient:</strong> patient@hospitalms.com / patient123</div>
+            <div>&bull; <strong>Doctor:</strong> doctor@hospitalms.com / doctor123</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="main-footer" style="padding-top: 30px;">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding: 15px 0;">
+        <p>&copy; 2026 <span>Hospital Management System</span>. All rights reserved. Designed for College Project Demonstration.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Dashboard | Hospital Management System</title>
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       MAIN NAVIGATION HEADER (PORTAL VIEW)
+       ========================================================================= -->
+  <header class="main-header">
+    <div class="container navbar">
+      <!-- Hospital Brand Logo -->
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <i class="fas fa-hospital"></i>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">Hospital Management</span>
+          <span class="logo-sub">Patient Portal</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="doctors.html" class="nav-link">Doctors</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="appointment.html" class="nav-link">Appointments</a>
+        <a href="billing.html" class="nav-link">Billing</a>
+        <a href="medical-records.html" class="nav-link">Medical Records</a>
+        <a href="login.html" class="btn btn-outline btn-sm" style="margin-left: 10px;">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       DASHBOARD WORKSPACE LAYOUT (SIDEBAR + MAIN)
+       ========================================================================= -->
+  <div class="dashboard-layout">
+    
+    <!-- -----------------------------------------------------------------------
+         SIDEBAR MENU
+         ----------------------------------------------------------------------- -->
+    <aside class="dashboard-sidebar">
+      <!-- Patient Profile Preview -->
+      <div class="sidebar-user-card">
+        <div class="sidebar-avatar">
+          RP
+        </div>
+        <div class="sidebar-user-details">
+          <h4>Rahul Patel</h4>
+          <p>ID: PT-2026-0842</p>
+        </div>
+      </div>
+
+      <!-- Menu Items -->
+      <ul class="sidebar-menu">
+        <li class="sidebar-item active">
+          <a href="patient-dashboard.html">
+            <i class="fas fa-th-large"></i> Dashboard
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="#my-profile">
+            <i class="fas fa-user-circle"></i> My Profile
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="#appointments">
+            <i class="fas fa-calendar-check"></i> My Appointments
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="medical-records.html">
+            <i class="fas fa-notes-medical"></i> Medical Records
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="#prescriptions">
+            <i class="fas fa-pills"></i> Prescriptions
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a href="billing.html">
+            <i class="fas fa-file-invoice-dollar"></i> Billing
+          </a>
+        </li>
+        <li class="sidebar-item logout">
+          <a href="login.html">
+            <i class="fas fa-arrow-right-from-bracket"></i> Logout
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- -----------------------------------------------------------------------
+         MAIN DASHBOARD WORKSPACE
+         ----------------------------------------------------------------------- -->
+    <main class="dashboard-main">
+      
+      <!-- Greeting Header -->
+      <div class="dashboard-header">
+        <div class="dashboard-greeting">
+          <h1>Welcome back, Rahul Patel</h1>
+          <p>Here is your personal health overview, upcoming consultations, and medical records.</p>
+        </div>
+        <a href="appointment.html" class="btn btn-primary">
+          <i class="fas fa-plus"></i> New Appointment
+        </a>
+      </div>
+
+      <!-- 4 Dashboard Metric Cards -->
+      <div class="dashboard-stats-grid">
+        <!-- Card 1: Upcoming Appointments -->
+        <div class="dashboard-stat-card">
+          <div class="d-stat-info">
+            <h3>01</h3>
+            <p>Upcoming Appointments</p>
+          </div>
+          <div class="d-stat-icon icon-blue">
+            <i class="fas fa-calendar-day"></i>
+          </div>
+        </div>
+
+        <!-- Card 2: Total Appointments -->
+        <div class="dashboard-stat-card">
+          <div class="d-stat-info">
+            <h3>08</h3>
+            <p>Total Appointments</p>
+          </div>
+          <div class="d-stat-icon icon-purple">
+            <i class="fas fa-calendar-check"></i>
+          </div>
+        </div>
+
+        <!-- Card 3: Medical Records -->
+        <div class="dashboard-stat-card">
+          <div class="d-stat-info">
+            <h3>05</h3>
+            <p>Medical Records</p>
+          </div>
+          <div class="d-stat-icon icon-green">
+            <i class="fas fa-file-waveform"></i>
+          </div>
+        </div>
+
+        <!-- Card 4: Pending Bills -->
+        <div class="dashboard-stat-card">
+          <div class="d-stat-info">
+            <h3>₹0</h3>
+            <p>Pending Bills</p>
+          </div>
+          <div class="d-stat-icon icon-orange">
+            <i class="fas fa-receipt"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Patient Vitals Summary -->
+      <div class="info-alert-box" style="margin-bottom: 30px;">
+        <i class="fas fa-heart-pulse"></i>
+        <div>
+          <h4>Latest Recorded Health Vitals (15/09/2026)</h4>
+          <p>Blood Pressure: <strong>128/84 mmHg</strong> | Heart Rate: <strong>72 bpm</strong> | Blood Glucose: <strong>96 mg/dL</strong> | Weight: <strong>68 kg</strong> | Blood Group: <strong>B+</strong></p>
+        </div>
+      </div>
+
+      <!-- Appointment History Table -->
+      <section class="table-card" id="appointments">
+        <div class="table-header-bar">
+          <h2>My Appointments Schedule</h2>
+          <a href="appointment.html" class="btn btn-secondary btn-sm">
+            <i class="fas fa-calendar-plus"></i> Book Another
+          </a>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Appointment ID</th>
+                <th>Doctor</th>
+                <th>Department</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Row 1: Upcoming -->
+              <tr>
+                <td><strong>#APT-9041</strong></td>
+                <td>
+                  <div class="table-doctor-cell">
+                    <div class="table-doctor-avatar">RS</div>
+                    <div>
+                      <strong>Dr. Rahul Sharma</strong>
+                      <div style="font-size: 0.8rem; color: var(--text-muted);">Cardiologist</div>
+                    </div>
+                  </div>
+                </td>
+                <td>Cardiology</td>
+                <td>24/09/2026</td>
+                <td>10:30 AM</td>
+                <td><span class="badge badge-confirmed"><i class="fas fa-check-circle"></i> Confirmed</span></td>
+                <td>
+                  <a href="#" class="btn btn-outline btn-sm">View Slip</a>
+                </td>
+              </tr>
+
+              <!-- Row 2: Completed -->
+              <tr>
+                <td><strong>#APT-8872</strong></td>
+                <td>
+                  <div class="table-doctor-cell">
+                    <div class="table-doctor-avatar">PP</div>
+                    <div>
+                      <strong>Dr. Priya Patel</strong>
+                      <div style="font-size: 0.8rem; color: var(--text-muted);">Dentist</div>
+                    </div>
+                  </div>
+                </td>
+                <td>Dental Care</td>
+                <td>10/09/2026</td>
+                <td>02:00 PM</td>
+                <td><span class="badge badge-completed"><i class="fas fa-circle-check"></i> Completed</span></td>
+                <td>
+                  <a href="medical-records.html" class="btn btn-secondary btn-sm">View Rx</a>
+                </td>
+              </tr>
+
+              <!-- Row 3: Completed -->
+              <tr>
+                <td><strong>#APT-7819</strong></td>
+                <td>
+                  <div class="table-doctor-cell">
+                    <div class="table-doctor-avatar">AS</div>
+                    <div>
+                      <strong>Dr. Amit Shah</strong>
+                      <div style="font-size: 0.8rem; color: var(--text-muted);">Neurologist</div>
+                    </div>
+                  </div>
+                </td>
+                <td>Neurology</td>
+                <td>18/08/2026</td>
+                <td>11:00 AM</td>
+                <td><span class="badge badge-completed"><i class="fas fa-circle-check"></i> Completed</span></td>
+                <td>
+                  <a href="medical-records.html" class="btn btn-secondary btn-sm">View Rx</a>
+                </td>
+              </tr>
+
+              <!-- Row 4: Cancelled -->
+              <tr>
+                <td><strong>#APT-6721</strong></td>
+                <td>
+                  <div class="table-doctor-cell">
+                    <div class="table-doctor-avatar">NM</div>
+                    <div>
+                      <strong>Dr. Neha Mehta</strong>
+                      <div style="font-size: 0.8rem; color: var(--text-muted);">Pediatrician</div>
+                    </div>
+                  </div>
+                </td>
+                <td>Pediatrics</td>
+                <td>02/08/2026</td>
+                <td>09:30 AM</td>
+                <td><span class="badge badge-cancelled"><i class="fas fa-circle-xmark"></i> Cancelled</span></td>
+                <td>
+                  <span style="color: var(--text-muted); font-size: 0.85rem;">Rescheduled</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Active Prescriptions Snippet -->
+      <section class="table-card" id="prescriptions">
+        <div class="table-header-bar">
+          <h2>Current Prescriptions &amp; Medications</h2>
+          <a href="medical-records.html" class="btn btn-secondary btn-sm">
+            <i class="fas fa-external-link-alt"></i> All Records
+          </a>
+        </div>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Medicine Name</th>
+                <th>Dosage</th>
+                <th>Frequency</th>
+                <th>Prescribed By</th>
+                <th>Duration</th>
+                <th>Pharmacy Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Atenolol 25mg</strong></td>
+                <td>1 Tablet</td>
+                <td>Once Daily (Morning after food)</td>
+                <td>Dr. Rahul Sharma</td>
+                <td>30 Days</td>
+                <td><span class="badge badge-paid">Dispensed</span></td>
+              </tr>
+              <tr>
+                <td><strong>Amoxicillin 500mg</strong></td>
+                <td>1 Capsule</td>
+                <td>Twice Daily (Morning &amp; Night)</td>
+                <td>Dr. Priya Patel</td>
+                <td>5 Days</td>
+                <td><span class="badge badge-completed">Completed</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="main-footer" style="padding-top: 30px;">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding: 15px 0;">
+        <p>&copy; 2026 <span>Hospital Management System</span> — Patient Portal. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

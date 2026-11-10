@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Services | Hospital Management System</title>
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       TOP EMERGENCY & CONTACT INFO BAR
+       ========================================================================= -->
+  <aside class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-info">
+        <span class="top-info-item"><i class="fas fa-map-marker-alt"></i> 108 Healthcare Blvd, Medical Enclave</span>
+        <span class="top-info-item"><i class="far fa-clock"></i> OPD: Mon - Sat: 8:00 AM - 8:00 PM</span>
+        <span class="top-info-item"><i class="fas fa-envelope"></i> info@hospitalms.com</span>
+      </div>
+      <div class="top-info">
+        <span class="top-info-item top-emergency"><i class="fas fa-phone-volume"></i> 24/7 Emergency: 102 / +91 98765 00102</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       MAIN NAVIGATION HEADER
+       ========================================================================= -->
+  <header class="main-header">
+    <div class="container navbar">
+      <!-- Hospital Brand Logo -->
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <i class="fas fa-hospital"></i>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">Hospital Management</span>
+          <span class="logo-sub">Healthcare &amp; EMR Portal</span>
+        </div>
+      </a>
+
+      <!-- Pure CSS Mobile Hamburger Toggle Checkbox -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle Navigation">
+        <i class="fas fa-bars"></i>
+      </label>
+
+      <!-- Navigation Links -->
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="doctors.html" class="nav-link">Doctors</a>
+        <a href="services.html" class="nav-link active">Services</a>
+        <a href="appointment.html" class="nav-link">Appointments</a>
+        <a href="patient-registration.html" class="nav-link">Patients</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="login.html" class="nav-link">Login</a>
+        <!-- Mobile View CTA Button -->
+        <a href="appointment.html" class="btn btn-primary btn-sm mobile-cta" style="display: none;">
+          <i class="fas fa-calendar-plus"></i> Book Appointment
+        </a>
+      </nav>
+
+      <!-- Desktop Book Appointment Button -->
+      <a href="appointment.html" class="btn btn-primary">
+        <i class="fas fa-calendar-check"></i> Book Appointment
+      </a>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       PAGE BANNER
+       ========================================================================= -->
+  <section class="page-banner">
+    <div class="container page-banner-content">
+      <h1 class="page-banner-title">Our Medical Services</h1>
+      <p class="page-banner-desc">Comprehensive clinical care, modern diagnostics, and dedicated specialized medical departments.</p>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span class="active">Services</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       MAIN CONTENT CONTAINER
+       ========================================================================= -->
+  <main>
+    <section class="section-padding">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+          <span class="section-badge">Clinical Excellence</span>
+          <h2 class="section-title">Specialized Healthcare Departments</h2>
+          <p class="section-subtitle">
+            Explore our state-of-the-art medical services equipped with experienced specialists and advanced medical technology.
+          </p>
+        </div>
+
+        <!-- 8 Large Service Cards Grid -->
+        <div class="services-grid">
+          <!-- Service 1: Emergency Care -->
+          <article class="service-card">
+            <div class="service-icon-wrapper" style="background-color: var(--status-danger-bg); color: var(--status-danger);">
+              <i class="fas fa-truck-medical"></i>
+            </div>
+            <h3>Emergency Care</h3>
+            <p>
+              Round-the-clock emergency and critical trauma care with rapid response ambulance service, fully equipped resuscitation bays, and emergency surgical staff.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> 24/7 Trauma &amp; Resuscitation Unit</li>
+              <li><i class="fas fa-check"></i> Dedicated Ambulance Support</li>
+              <li><i class="fas fa-check"></i> Acute Triage Care Protocols</li>
+            </ul>
+            <a href="appointment.html?service=Emergency+Care" class="btn btn-secondary btn-block">
+              <i class="fas fa-info-circle"></i> View Details
+            </a>
+          </article>
+
+          <!-- Service 2: Cardiology -->
+          <article class="service-card">
+            <div class="service-icon-wrapper">
+              <i class="fas fa-heart-pulse"></i>
+            </div>
+            <h3>Cardiology</h3>
+            <p>
+              Comprehensive cardiovascular diagnosis and therapy including 2D Echocardiography, Treadmill ECG, coronary interventions, and preventative heart wellness.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> 2D Echo &amp; Holter Monitoring</li>
+              <li><i class="fas fa-check"></i> Cardiac Catheterization Lab</li>
+              <li><i class="fas fa-check"></i> Hypertension Management</li>
+            </ul>
+            <a href="appointment.html?service=Cardiology" class="btn btn-secondary btn-block">
+              <i class="fas fa-info-circle"></i> View Details
+            </a>
+          </article>
+
+          <!-- Service 3: Neurology -->
+          <article class="service-card">
+            <div class="service-icon-wrapper" style="background-color: #f3e8ff; color: #9333ea;">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3>Neurology</h3>
+            <p>
+              Specialized diagnostics and rehabilitation for stroke, epilepsy, migraines, neuropathies, and spine disorders utilizing advanced digital neuro-imaging.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> EEG, EMG &amp; Nerve Conduction</li>
+              <li><i class="fas fa-check"></i> Stroke Management Protocol</li>
+              <li><i class="fas fa-check"></i> Neuromuscular Therapy</li>
+            </ul>
+            <a href="appointment.html?service=Neurology" class="btn btn-secondary btn-block">
+              <i class="fas fa-info-circle"></i> View Details
+            </a>
+          </article>
+
+          <!-- Service 4: Dental Care -->
+          <article class="service-card">
+            <div class="service-icon-wrapper" style="background-color: var(--secondary-light); color: var(--secondary);">
+              <i class="fas fa-tooth"></i>
+            </div>
+            <h3>Dental Care</h3>
+            <p>
+              Complete oral healthcare solutions including root canal treatments, aesthetic dental orthodontics, painless tooth extractions, and regular preventive scaling.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Digital OPG Dental X-Ray</li>
+              <li><i class="fas fa-check"></i> Cosmetic Smile Designing</li>
+              <li><i class="fas fa-check"></i> Advanced Dental Implants</li>
+            </ul>
+            <a href="appointment.html?service=Dental+Care" class="btn btn-secondary btn-block">
+              <i class="fas fa-info-circle"></i> View Details
+            </a>
+          </article>
+
+          <!-- Service 5: Pediatrics -->
+          <article class="service-card">
+            <div class="service-icon-wrapper" style="background-color: #fef3c7; color: #d97706;">
+              <i class="fas fa-baby"></i>
+            </div>
+            <h3>Pediatrics</h3>
+            <p>
+              Compassionate pediatric care for infants, young children, and adolescents encompassing immunization programs, growth monitoring, and pediatric intensive care.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Complete Vaccination Schedules</li>
+              <li><i class="fas fa-check"></i> Neonatal Intensive Care (NICU)</li>
+              <li><i class="fas fa-check"></i> Child Nutrition &amp; Growth Tracking</li>
+            </ul>
+            <a href="appointment.html?service=Pediatrics" class="btn btn-secondary btn-block">
+              <i class="fas fa-info-circle"></i> View Details
+            </a>
+          </article>
+
+          <!-- Service 6: General Medicine -->
+          <article class="service-card">
+            <div class="service-icon-wrapper" style="background-color: var(--status-success-bg); color: var(--status-success);">
+              <i class="fas fa-stethoscope"></i>
+            </div>
+            <h3>General Medicine</h3>
+            <p>
+              First-line consultation, diagnosis of acute infectious diseases, diabetes and cholesterol management, routine checkups, and holistic preventative healthcare.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Chronic Disease Care</li>
+              <li><i class="fas fa-check"></i> Annual Preventive Health Checks</li>
+              <li><i class="fas fa-check"></i> Personalized Wellness Plans</li>
+            </ul>
+            <a href="appointment.html?service=General+Medicine" class="btn btn-secondary btn-block">
+              <i class="fas fa-info-circle"></i> View Details
+            </a>
+          </article>
+
+          <!-- Service 7: Laboratory Services -->
+          <article class="service-card">
+            <div class="service-icon-wrapper" style="background-color: #e0f2fe; color: #0284c7;">
+              <i class="fas fa-vial-virus"></i>
+            </div>
+            <h3>Laboratory Services</h3>
+            <p>
+              NABL accredited automated pathology lab delivering rapid test results for hematology, biochemistry, microbiology, hormone assays, and urine analysis.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Automated Blood &amp; Urine Profiles</li>
+              <li><i class="fas fa-check"></i> Fast-Track Online Reports</li>
+              <li><i class="fas fa-check"></i> Home Sample Collection Available</li>
+            </ul>
+            <a href="appointment.html?service=Laboratory+Services" class="btn btn-secondary btn-block">
+              <i class="fas fa-info-circle"></i> View Details
+            </a>
+          </article>
+
+          <!-- Service 8: Pharmacy -->
+          <article class="service-card">
+            <div class="service-icon-wrapper" style="background-color: #dcfce7; color: #15803d;">
+              <i class="fas fa-capsules"></i>
+            </div>
+            <h3>Pharmacy</h3>
+            <p>
+              Full-service in-hospital pharmacy open 24/7, providing authentic medications, cold-storage vaccines, surgical consumables, and emergency medical kits.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> 100% Genuine Prescription Drugs</li>
+              <li><i class="fas fa-check"></i> Direct EHR Synchronized Orders</li>
+              <li><i class="fas fa-check"></i> 24/7 Dispensary Window</li>
+            </ul>
+            <a href="appointment.html?service=Pharmacy" class="btn btn-secondary btn-block">
+              <i class="fas fa-info-circle"></i> View Details
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: About Hospital -->
+        <div class="footer-col footer-about">
+          <h3>Hospital Management</h3>
+          <p>
+            Providing high-quality medical services, computerized hospital management, and accessible patient care. Committed to clinical excellence and compassionate healthcare.
+          </p>
+          <div class="highlight-item" style="color: #94a3b8;">
+            <i class="fas fa-shield-alt" style="color: var(--secondary);"></i> ISO 9001:2026 Certified Facility
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Hospital</a></li>
+            <li><a href="doctors.html"><i class="fas fa-chevron-right"></i> Our Doctors</a></li>
+            <li><a href="appointment.html"><i class="fas fa-chevron-right"></i> Book Appointment</a></li>
+            <li><a href="login.html"><i class="fas fa-chevron-right"></i> Staff &amp; Patient Login</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div class="footer-col">
+          <h3>Healthcare Services</h3>
+          <ul class="footer-links">
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Emergency Care</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Cardiology Department</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Neurology Clinic</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Dental Health</a></li>
+            <li><a href="billing.html"><i class="fas fa-chevron-right"></i> Billing &amp; Invoices</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact Information -->
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>108 Healthcare Blvd, Medical Enclave, City, PIN-400001</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <span>+91 98765 43210 / 1800-123-4567</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>support@hospitalms.com</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-truck-medical"></i>
+              <span>Emergency Hotline: Dial 102</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright & Bottom Bar -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 <span>Hospital Management System</span>. All rights reserved. Designed for College Project Demonstration.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
